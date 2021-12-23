@@ -1,5 +1,4 @@
-#!/usr/bin/ruby
-# frozen_string:literal: true
+# frozen_string_literal: true
 
 module Brainfuck
   class VM
@@ -35,7 +34,7 @@ module Brainfuck
     end
 
     def run(machine)
-      return (machine[:inst_p] >= machine[:program].length ? machine : run(ops[machine[:program][machine[:inst_p]]].(machine)))
+      loop { (machine=ops[machine[:program][machine[:inst_p]]].(machine)) && (machine[:inst_p] >= machine[:program].length && break) }
     end
 
     def debug(machine)
@@ -43,5 +42,3 @@ module Brainfuck
     end
   end
 end
-
-Brainfuck::VM.new.exec(ARGF.read)
