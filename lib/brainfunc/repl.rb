@@ -1,25 +1,19 @@
 module Brainfunc
-  class Repl
-    attr_accessor :vm, :state
-
-    def initialize
-      @machine = Brainfunc::VM.new
-      @state   = {}
+  module Repl
+    Run = ->() {
       puts("Brainfunc - Functional Brainfuck Interpreter")
-    end
-
-    def run
       loop do
         print("-> ")
-        case (instruction=gets.strip.chomp)
+        case (instruction = gets.strip.chomp)
         when "quit"
-          exit(0)
+          break
         when "exit"
-          exit(0)
+          break
         else
-          @state = @machine.exec(instruction, @state)
+          state = Brainfunc::VM::Exec.call(instruction, (state || {}))
         end
       end
-    end
+      exit(0)
+    }
   end
 end
