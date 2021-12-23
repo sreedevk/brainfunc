@@ -12,6 +12,7 @@ gem install brainfunc
 ## Usage
 
 ```
+brainfunc /path/to/code.bf
 ```
 
 ## Roadmap
