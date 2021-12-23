@@ -4,7 +4,7 @@ module Brainfunc
 
     def initialize
       @machine = Brainfunc::VM.new
-      @state   = @machine.exec(String.new)
+      @state   = {}
       puts("Brainfunc - Functional Brainfuck Interpreter")
     end
 
@@ -14,8 +14,10 @@ module Brainfunc
         case (instruction=gets.strip.chomp)
         when "quit"
           exit(0)
+        when "exit"
+          exit(0)
         else
-          @state = @machine.run(@state.merge(program: @state[:program] + [instruction]))
+          @state = @machine.eval(instruction, @state)
           pp @state
         end
       end

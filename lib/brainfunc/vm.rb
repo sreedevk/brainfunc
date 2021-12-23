@@ -30,11 +30,21 @@ module Brainfunc
     end
 
     def exec(source)
-      run({ memory: Hash.new { 0 }, inst_p: 0, data_p: 0, stack: [], program: source.strip.chars })
+      vm_state = { memory: Hash.new { 0 }, inst_p: 0, data_p: 0, stack: [], program: source.strip.chars }
+      loop { (vm_state=ops[vm_state[:program][vm_state[:inst_p]]].(vm_state)) && (vm_state[:inst_p] >= vm_state[:program].length && break) }
+      vm_state
     end
 
-    def run(vm_state)
-      loop { (vm_state=ops[vm_state[:program][vm_state[:inst_p]]].(vm_state)) && (vm_state[:inst_p] >= vm_state[:program].length && break) }
+    def eval(source, vm_state = {})
+      vm_state = { memory: Hash.new { 0 }, inst_p: 0, data_p: 0, stack: [], program: (vm_state[:program] || []) + source.strip.chars }
+        .merge(vm_state) { |k, defval, setval| k == :program ? defval : setval }
+
+      loop do
+        vm_state = ops[vm_state[:program][vm_state[:inst_p]]].(vm_state)
+
+        break if vm_state[:inst_p] >= vm_state[:program].length
+      end
+
       vm_state
     end
 
