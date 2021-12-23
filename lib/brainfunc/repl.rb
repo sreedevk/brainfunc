@@ -17,8 +17,7 @@ module Brainfunc
         when "exit"
           exit(0)
         else
-          @state = @machine.eval(instruction, @state)
-          pp @state
+          @state = @machine.exec(instruction, @state)
         end
       end
     end

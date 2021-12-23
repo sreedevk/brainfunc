@@ -27,6 +27,8 @@ brainfunc /path/to/code.bf
 The Repl maintains state across commands. you can either enter a single instruction / a string of instructions.
 Invalid instructions are added to the program memory, but are never evaluated.
 
+the `#` character is a debug instruction that prints out the current machine state.
+
 ## Roadmap
 
 1. Improve Performance
