@@ -6,3 +6,4 @@ This is yet another implementation of the [Brainfuck Interpreter](https://en.wik
 
 1. Improve Performance
 2. Improve Docs + Code Readability
+3. Add a Repl
