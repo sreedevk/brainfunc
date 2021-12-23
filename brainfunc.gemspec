@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                  = "brainfunc"
-  s.version               = '0.0.2'
+  s.version               = '0.0.3'
   s.licenses              = ['MIT']
   s.summary               = 'Tiny, Performant Brainfuck interpreter implemented in the functional paradigm.'
   s.description           = "Tiny, Performant, Functional Brainfuck interpreter"
@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
     "bin/brainfunc",
     "bin/ibrainfunc",
     "lib/brainfunc.rb",
-    "lib/brainfunc/vm.rb"
+    "lib/brainfunc/vm.rb",
+    "lib/brainfunc/repl.rb"
   ]
   s.homepage              = "https://www.sree.dev"
   s.metadata              = { 'source_code_uri' => "https://github.com/sreedevk/brainfunc" }
