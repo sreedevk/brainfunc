@@ -33,8 +33,9 @@ module Brainfunc
       run({ memory: Hash.new { 0 }, inst_p: 0, data_p: 0, stack: [], program: source.strip.chars })
     end
 
-    def run(machine)
-      loop { (machine=ops[machine[:program][machine[:inst_p]]].(machine)) && (machine[:inst_p] >= machine[:program].length && break) }
+    def run(vm_state)
+      loop { (vm_state=ops[vm_state[:program][vm_state[:inst_p]]].(vm_state)) && (vm_state[:inst_p] >= vm_state[:program].length && break) }
+      vm_state
     end
 
     def debug(machine)

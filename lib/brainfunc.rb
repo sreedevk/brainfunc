@@ -2,4 +2,5 @@
 
 module Brainfunc
   require_relative "brainfunc/vm"
+  require_relative "brainfunc/repl"
 end

@@ -12,8 +12,15 @@ gem install brainfunc
 
 ## Usage
 
+### Interpreter
+
 ```
 brainfunc /path/to/code.bf
+```
+
+### Rrepl (Read Eval Print Loop)
+```bash
+  ibrainfunc
 ```
 
 ## Roadmap

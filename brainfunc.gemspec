@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                  = "brainfunc"
-  s.version               = '0.0.1'
+  s.version               = '0.0.2'
   s.licenses              = ['MIT']
   s.summary               = 'Tiny, Performant Brainfuck interpreter implemented in the functional paradigm.'
   s.description           = "Tiny, Performant, Functional Brainfuck interpreter"
@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.email                 = 'sreedevpadmakumar@gmail.com'
   s.files                 = [
     "bin/brainfunc",
+    "bin/ibrainfunc",
     "lib/brainfunc.rb",
     "lib/brainfunc/vm.rb"
   ]
@@ -15,5 +16,5 @@ Gem::Specification.new do |s|
   s.metadata              = { 'source_code_uri' => "https://github.com/sreedevk/brainfunc" }
   s.bindir                = 'bin'
   s.required_ruby_version = '~> 3.0.0'
-  s.executables   << 'brainfunc'
+  s.executables          += ['ibrainfunc', 'brainfunc']
 end
