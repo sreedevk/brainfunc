@@ -18,10 +18,14 @@ gem install brainfunc
 brainfunc /path/to/code.bf
 ```
 
-### Rrepl (Read Eval Print Loop)
+### Repl (Read Eval Print Loop)
 ```bash
   ibrainfunc
 ```
+![2021-12-23-115421_2006x1728_scrot](https://user-images.githubusercontent.com/36154121/147197758-1da59864-7860-4e03-8bc1-47f0fec4190f.png)
+
+The Repl maintains state across commands. you can either enter a single instruction / a string of instructions.
+Invalid instructions are added to the program memory, but are never evaluated.
 
 ## Roadmap
 
