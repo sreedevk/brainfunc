@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email                 = 'sreedevpadmakumar@gmail.com'
   s.files                 = [
     "bin/brainfunc",
-    "lib/brainfunc.rb"
+    "lib/brainfunc.rb",
     "lib/brainfunc/vm.rb"
   ]
   s.homepage              = "https://www.sree.dev"
