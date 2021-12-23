@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Brainfuck
+module Brainfunc
   class VM
     def ops
       @ops ||= (Hash.new { ->(state) { state.merge({inst_p: state[:inst_p] + 1}) } }).merge({

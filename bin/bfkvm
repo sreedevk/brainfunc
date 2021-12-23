@@ -1,4 +1,0 @@
-#!/usr/bin/ruby
-
-require_relative "../lib/brainfuck.rb"
-Brainfuck::VM.new.exec(ARGF.read)
